@@ -1,15 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 from sklearn.tree import DecisionTreeClassifier
-import numpy as np
+import pandas as pd  
 
-# Datos de ejemplo: [Peso (kg), Tamaño (cm)]
-X = [[4, 25],  # Gato
-     [3, 20],  # Gato
-     [10, 50], # Perro
-     [9, 48],  # Perro
-     [5, 30]]  # Gato
-y = [0, 0, 1, 1, 0]  # 0 = Gato, 1 = Perro
+# Cargar el archivo CSV
+data = pd.read_csv('cat-dog-classification.csv')
+
+# Seleccionar las columnas necesarias (Peso y Tamaño)
+X = data[['Weight', 'Height']].values  # Variables: Peso y Tamaño
+y = data['Label'].apply(lambda x: 1 if x == 'Dog' else 0).values  # Etiqueta: 1 = Perro, 0 = Gato
 
 # Crear el modelo de árbol de decisión
 model = DecisionTreeClassifier()
