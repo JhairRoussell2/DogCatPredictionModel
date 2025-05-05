@@ -52,7 +52,7 @@ entry_tamano.pack(pady=5)
 tk.Button(root, text="Predecir", command=predecir).pack(pady=10)
 
 # Etiqueta para mostrar la predicción
-result_label = tk.Label(root, text="¡¡Presione el botón y Averigue!!!", font=("Arial", 12))
+result_label = tk.Label(root, text="¡¡¡Presione el botón y Averigue!!!", font=("Arial", 12))
 result_label.pack(pady=20)
 
 root.mainloop()
